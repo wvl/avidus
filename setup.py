@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #
 # The contents of this file are subject to the Mozilla Public
 # License Version 1.1 (the "License"); you may not use this file
@@ -17,9 +18,6 @@
 #
 # Contributor(s):
 #
-
-#!/usr/bin/env python
-
 
 import shelve
 import os
