@@ -57,16 +57,16 @@ class ChartWindow(QScrollView):
         self.mNumIndCharts = 0
         self.mMaxNumIndCharts = 5
         
-        self.setHScrollBarMode(QScrollView.ScrollBarMode.AlwaysOn)
-        self.setVScrollBarMode(QScrollView.ScrollBarMode.AlwaysOff)
-        self.splitter = QSplitter(Qt.Orientation.Vertical, self.viewport())
+        self.setHScrollBarMode(QScrollView.AlwaysOn)
+        self.setVScrollBarMode(QScrollView.AlwaysOff)
+        self.splitter = QSplitter(Qt.Vertical, self.viewport())
         self.addChild(self.splitter,0,0)
 
         #X Axis
         self.mX = XAxis(self.mData, self.mYAxisSize, self.mProps, \
                         self.splitter, 'XAxis')
         self.splitter.setResizeMode(self.mX, \
-                                    QSplitter.ResizeMode.Stretch)
+                                    QSplitter.Stretch)
         
 
         # Price Chart
@@ -74,7 +74,7 @@ class ChartWindow(QScrollView):
                                  self.mYAxisSize, self.mProps,  \
                                  self.splitter, 'Main Chart')
         #self.splitter.setResizeMode(self.mChart, \
-        #                            QSplitter.ResizeMode.FollowSizeHint)
+        #                            QSplitter.FollowSizeHint)
 
         self.splitter.moveToLast(self.mX)
 
@@ -86,7 +86,7 @@ class ChartWindow(QScrollView):
         #                              self.mProps, \
         #                              self.splitter, 'Indicator Chart')
             #self.splitter.setResizeMode(indchart, \
-            #                            QSplitter.ResizeMode.Stretch)
+            #                            QSplitter.Stretch)
         #    indchart.hide()
         #    self.mIndCharts.append(indchart)
 
@@ -111,7 +111,7 @@ class ChartWindow(QScrollView):
                                   self.mProps, \
                                   self.splitter, 'Indicator Chart')
         self.splitter.setResizeMode(indchart, \
-                                    QSplitter.ResizeMode.Stretch)
+                                    QSplitter.Stretch)
         
         self.mIndCharts.append(indchart)
         

@@ -55,28 +55,28 @@ class StyleCombo(QComboBox):
                               Qt.darkGreen, Qt.darkBlue, Qt.darkCyan, \
                               Qt.darkMagenta, Qt.darkYellow]
 
-        self.standardPenStyles = [Qt.PenStyle.NoPen, \
-                                  Qt.PenStyle.SolidLine, \
-                                  Qt.PenStyle.DashLine, \
-                                  Qt.PenStyle.DotLine, \
-                                  Qt.PenStyle.DashDotLine, \
-                                  Qt.PenStyle.DashDotDotLine]
+        self.standardPenStyles = [Qt.NoPen, \
+                                  Qt.SolidLine, \
+                                  Qt.DashLine, \
+                                  Qt.DotLine, \
+                                  Qt.DashDotLine, \
+                                  Qt.DashDotDotLine]
 
-        self.standardBrushStyles = [Qt.BrushStyle.NoBrush, \
-                                    Qt.BrushStyle.SolidPattern, \
-                                    Qt.BrushStyle.Dense1Pattern, \
-                                    Qt.BrushStyle.Dense2Pattern, \
-                                    Qt.BrushStyle.Dense3Pattern, \
-                                    Qt.BrushStyle.Dense4Pattern, \
-                                    Qt.BrushStyle.Dense5Pattern, \
-                                    Qt.BrushStyle.Dense6Pattern, \
-                                    Qt.BrushStyle.Dense7Pattern, \
-                                    Qt.BrushStyle.HorPattern, \
-                                    Qt.BrushStyle.VerPattern, \
-                                    Qt.BrushStyle.CrossPattern, \
-                                    Qt.BrushStyle.BDiagPattern, \
-                                    Qt.BrushStyle.FDiagPattern, \
-                                    Qt.BrushStyle.DiagCrossPattern]
+        self.standardBrushStyles = [Qt.NoBrush, \
+                                    Qt.SolidPattern, \
+                                    Qt.Dense1Pattern, \
+                                    Qt.Dense2Pattern, \
+                                    Qt.Dense3Pattern, \
+                                    Qt.Dense4Pattern, \
+                                    Qt.Dense5Pattern, \
+                                    Qt.Dense6Pattern, \
+                                    Qt.Dense7Pattern, \
+                                    Qt.HorPattern, \
+                                    Qt.VerPattern, \
+                                    Qt.CrossPattern, \
+                                    Qt.BDiagPattern, \
+                                    Qt.FDiagPattern, \
+                                    Qt.DiagCrossPattern]
   
 
     def resizeEvent(self, resizeEvent):
@@ -138,8 +138,8 @@ class PenStyleCombo(StyleCombo):
 
         lb = self.listBox()
         lb.insertItem(self.tr('None'), 0)
-        i = Qt.PenStyle.SolidLine
-        while i <= Qt.PenStyle.DashDotDotLine:
+        i = Qt.SolidLine
+        while i <= Qt.DashDotDotLine:
             nm = QPixmap()
             hl = QPixmap()
             self.drawPixmap(nm,hl,i)
@@ -175,8 +175,8 @@ class BrushStyleCombo(StyleCombo):
 
         lb = self.listBox()
         lb.insertItem(self.tr('Transparent'), 0)
-        i = Qt.BrushStyle.SolidPattern
-        while i <= Qt.BrushStyle.DiagCrossPattern:
+        i = Qt.SolidPattern
+        while i <= Qt.DiagCrossPattern:
             nm = QPixmap()
             hl = QPixmap()
             self.drawPixmap(nm,hl,i)

@@ -20,67 +20,77 @@
 
 import sys,string
 import time
-from Numeric import *
+import Numeric
 
 def sma(input, length):
+   # return the sma for the current bar (input[0])
+   return Numeric.sum(input[0:length])/length
 
-    if length==0:
-        raise 'Cannot have a MA length of 0'
-
-    if len(input)==0:
-        return []
-
-    num = len(input)
-
-    if num <= length:
-        return []
     
-    var = input[0:num-length]
-    for i in range(1, length):
-        var = var + input[i:num+i-length]
-    out= var/length
-    return out
-    
+def sma_series(input, length):
+   # return the sma for the entire length of the input
+   
+   if length==0:
+      raise 'Cannot have a MA length of 0'
+   
+   if len(input)==0:
+      return []
+   
+   num = len(input)
+   
+   if num <= length:
+      return []
+   
+   var = input[0:num-length]
+   for i in range(1, length):
+      var = var + input[i:num+i-length]
+   out= var/length
+   return out
+   
 def ema(input, length):
-    
-    if length==0:
-        raise 'Cannot have a MA length of 0'
-    
-    if len(input)==0:
-        return []
+   # return the ema for the current bar.
+   pass
+   
+def ema_series(input, length):
+      
+   if length==0:
+      raise 'Cannot have a MA length of 0'
+   
+   if len(input)==0:
+      return []
+   
+   exp = 2.0/(length+1.0)
+   #exp = 0.2*(10/length)
+   
+   #fixme: ema too slow!
+   num = len(input)
+   
+   if num <= length:
+      return []
+   
+   numlength = num-length
+   out = array(zeros(numlength+1),Float)
+   
+   var = sum(input[numlength:num])
+   
+   out[numlength] = var/length
+   for i in range(1,numlength+1):
+      out[numlength-i] = out[numlength-i+1]*(1-exp) + input[numlength-i]*exp
+      
+   return out
 
-    exp = 2.0/(length+1.0)
-    #exp = 0.2*(10/length)
-
-    #fixme: ema too slow!
-    num = len(input)
-
-    if num <= length:
-        return []
-
-    numlength = num-length
-    out = array(zeros(numlength+1),Float)
-    
-    var = sum(input[numlength:num])
-    
-    out[numlength] = var/length
-    for i in range(1,numlength+1):
-        out[numlength-i] = out[numlength-i+1]*(1-exp) + input[numlength-i]*exp
-
-    return out
-
-def macd(input, long=26, short=14, signal_length=9):
-    if len(input) == 0:
-        return [],[]
-
-    if long <= short:
-        raise 'MACD calculation: Long must be larger than Short'
-    
-    ema_l = ema(input, long)
-    ema_s = ema(input, short)
-
-    out = ema_l - ema_s[0:len(ema_l)]
-    signal = ema(out, signal_length)
-
-    return out, signal
+def macd_series(input, long=26, short=14, signal_length=9):
+   if len(input) == 0:
+      return [],[]
+   
+   if long <= short:
+      raise 'MACD calculation: Long must be larger than Short'
+   
+   ema_l = ema(input, long)
+   ema_s = ema(input, short)
+   
+   out = ema_l - ema_s[0:len(ema_l)]
+   signal = ema(out, signal_length)
+   
+   return out, signal
 

@@ -73,7 +73,7 @@ arrow_right = [
 class MainWindow(QMainWindow):
     def __init__(self, *args):
         QMainWindow.__init__(self, None, 'chart main',
-                             Qt.WidgetFlags.WDestructiveClose)
+                             Qt.WDestructiveClose)
 
         # Create the chart window
         self.mw = ChartWindow(self)
@@ -82,18 +82,18 @@ class MainWindow(QMainWindow):
         self.file = QPopupMenu(self)
         self.menuBar().insertItem('&File', self.file)
         self.file.insertItem('&Quit', qApp.closeAllWindows,
-                             Qt.Modifier.CTRL+Qt.Key.Key_Q)
+                             Qt.CTRL+Qt.Key_Q)
 
         self.edit = QPopupMenu(self)
         self.menuBar().insertItem('&Edit', self.edit)
         self.edit.insertItem('&Add Indicator', self.mw.mChart.AddIndicator)
         self.edit.insertItem('&New Indicator', self.mw.newChart)
         self.edit.insertItem('&Properties', self.mw.editProperties,
-                             Qt.Modifier.ALT+Qt.Key.Key_P)
+                             Qt.ALT+Qt.Key_P)
         
         self.help = QPopupMenu(self)
         self.menuBar().insertItem('&Help', self.help)
-        self.help.insertItem('&About', self.about, Qt.Key.Key_F1)
+        self.help.insertItem('&About', self.about, Qt.Key_F1)
 
         # Tool Bar
         self.toolbar = QToolBar(self, 'toolbar')
