@@ -23,7 +23,7 @@ import shelve
 import os
 import DateTime
 
-tact_dir = os.path.join(os.environ['HOME'], '.tact')
+tact_dir = os.path.join(os.environ['HOME'], '.avidus')
 data_dir = os.path.join(tact_dir, 'data')
 
 def try_or_makedir(dir):
