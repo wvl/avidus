@@ -1,0 +1,41 @@
+
+Avidus - Open Financial Platform
+--------------------------------
+
+The Goal:
+---------
+Tradestation Like Capabilities including:
+ - Full Charting capabilities
+ - Real Time (and Historical) Data
+ - Full Scriptability enabling user created:
+	- indicators
+	- studies
+	- trading strategies
+ - Backtest and Realtime Trading Strategy Analysis
+ 
+Technical Premises:
+-------------------
+- Cross Platform
+- No MDI!
+- Fully scriptable (or written) in python
+- If speed is required, the object may be written in C++ and wrapped
+to provide python interface.
+- Using QT 2.2 for GUI toolkit
+- Componentized, but not necessarily client - server
+
+Why MPL?
+--------
+The MPL was chosen so as to meet the following goals:
+- allow and encourage commercial use, but to ensure all changes to
+Avidus released back under the same open source license.
+- Any user written scripts can be kept closed 
+
+
+Want to Help?
+-------------
+If you would like to help out with Avidus:
+- grab the latest CVS version 
+- check out the TODO file to see what needs to be done
+- sign up for the mailing lists 
+- submit a patch 
+- if you want to contribute a lot, cvs write access can be arranged

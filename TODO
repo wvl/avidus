@@ -1,23 +1,9 @@
 
-misc:
------
-- specify a file name for showme/ts 
-- reorganize menus - seperate showme/ts/paintbars from indicators
-- chart labelling (e.g. ticker, MACD, legend...)
-- grid on/off by individual chart 
-- should be able to remove indicators, and indicator charts
-- break up edit properties into:
-	- edit chart properties
-	- edit indicators - only edits the indicators on that chart...
-- Color style combos should bring up color editor, not stylecombo
-- Integrate with an HTML viewer - for displaying results.
-        - Use khtmlw when kde 2.0 bindings are created
+---------------------------------------------------------------------
+DS - Avidus Data Server
+---------------------------------------------------------------------
 
-Scale:
-------
-- Scale should be set to high/low value plus/minus a certain number of pixels
-- Log Scale on X and Y Axis - look at qt link to charting code, if I can
-- Scale on Volume seems to be too high
+- integrate real time (datek?)
 
 
 portfolio:
@@ -29,6 +15,39 @@ with forward and back arrows.
 same performance information as the performance analyzer/viewer -
 eg. capital appreciation, number of winning trades, etc.
 
+server updating:
+----------------
+- store start and stop date for each symbol
+- update should check the start and stop date and retrieve only missing
+symbols
+
+
+---------------------------------------------------------------------
+Tact - Technical Analysis and Charting Tool
+---------------------------------------------------------------------
+
+Chart:
+------
+- Redo chart component using the qt2.2 canvas widget, to enable
+drawing of support lines, text labelling, etc. 
+
+misc:
+-----
+- should be able to remove indicators, and indicator charts
+- specify a file name for showme/ts 
+- reorganize menus - seperate showme/ts/paintbars from indicators
+- chart labelling (e.g. ticker, MACD, legend...)
+- grid on/off by individual chart 
+- break up edit properties into:
+	- edit chart properties
+	- edit indicators - only edits the indicators on that chart...
+- Color style combos should bring up color editor, not stylecombo
+- Integrate with an HTML viewer - for displaying results.
+        - Use khtmlw when kde 2.0 bindings are created
+	- Mozilla component - non kde dependent?
+- Scale should be set to high/low value plus/minus a certain number of pixels
+- Log Scale on X and Y Axis - look at qt link to charting code, if I can
+- Scale on Volume seems to be too high
 
 saving of state:
 ----------------
@@ -42,14 +61,24 @@ default chart saved in $HOME/.tact dir and opened on startup
 additional chart styles can be saved by the user, and opened by them
 
 
-server updating:
-----------------
-- store start and stop date for each symbol
-- update should check the start and stop date and retrieve only missing
-symbols
+---------------------------------------------------------------------
+ASKELL - Avidus SKripting Easy Language Like
+---------------------------------------------------------------------
+
+- Support for majority of Easy Language functions
+
+---------------------------------------------------------------------
+TaSTE - Trade Strategy Testing Engine
+---------------------------------------------------------------------
+
+- Modify engine to allow real time operation 
+- Results Display - use html report facility similar to gnucash
 
 
-BUGS:
------
-- resize not done correctly (not using visibleWidth() from ScrollView
-- resize using wm drag causes display to mess up
+
+
+
+
+
+
+

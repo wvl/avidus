@@ -1,0 +1,8 @@
+
+BUGS
+
+
+Tact
+----
+- resize not done correctly (not using visibleWidth() from ScrollView
+- resize using wm drag causes display to mess up
