@@ -54,8 +54,8 @@ class ChartProperties(Properties):
 
         self.ChartStyles['Major Grid'] = 0
         self.ChartStyles['Minor Grid'] = 0
-        self.ChartStyles['Major Grid Style'] = Qt.PenStyle.DotLine
-        self.ChartStyles['Minor Grid Style'] = Qt.PenStyle.DotLine
+        self.ChartStyles['Major Grid Style'] = Qt.DotLine
+        self.ChartStyles['Minor Grid Style'] = Qt.DotLine
 
     def addExternalTab(self, tab, name, apply):
         self.addTab(tab, name)

@@ -34,9 +34,13 @@ class SMA(Indicator, Properties):
         tab = self.buildTab()
         self.addTab(tab[0], tab[1])
         
+    #def Calculate(self):
+    #    self.mSeries = sma(self.mData.close, self.length)
     def Calculate(self):
-        self.mSeries = sma(self.mData.close, self.length)
-    
+        print 'calculating SMA, length: ', len(self.mData.close)
+        for i in range(len(self.mData.close) - self.length):
+            self.mSeries.append(sma(self.mData.close[i:], self.length))
+                
     def buildTab(self):
         self.tab = QWidget(self)
 

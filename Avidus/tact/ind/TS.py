@@ -47,13 +47,11 @@ class TS(Indicator, Properties):
         run(self.mData, self.filename, \
             self.mXAxis.mNumDays, self.tsData)
 
-        calculateStats(self.mData, self.tsData, self.mXAxis.mNumDays)
+        #calculateStats(self.mData, self.tsData, self.mXAxis.mNumDays)
 
-        self.results_window.setTradeLog(self.tsData)
-        self.results_window.show()
-        #self.mSellSeries = self.tsData.sellData
-        #self.mBuySeries = self.tsData.buyData
-        
+        #self.results_window.setTradeLog(self.tsData)
+        #self.results_window.show()
+                
     def buildTab(self):
         self.tab = QWidget(self)
 

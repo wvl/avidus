@@ -185,7 +185,7 @@ class Chart(QWidget):
 
         
     def mousePressEvent(self, e):
-       if e.button() == Qt.ButtonState.RightButton:
+       if e.button() == Qt.RightButton:
            options = QPopupMenu(self)
            i = options.insertItem('Add Indicator', \
                                   self.AddIndicator)

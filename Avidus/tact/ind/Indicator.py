@@ -118,7 +118,7 @@ class Indicator:
 
     def PaintFilledLine(self, widget, p):
         p.setPen(self.Ind1Color)
-        p.setBrush(QBrush(self.Ind1Color,Qt.BrushStyle.SolidPattern))
+        p.setBrush(QBrush(self.Ind1Color,Qt.SolidPattern))
         if len(self.mSeries)==0:
             p.drawText(20,20,'No Data')
             return
