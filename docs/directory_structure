@@ -1,0 +1,13 @@
+
+
+Avidus/
+		 base/ - Common Utilities, Classes
+		 ds/   - Data Server
+		 ts/   - Trade Simulator
+		 ind/  - Indicator Library
+		 tact/ - 'Technical Analysis and Charting Tool' (charting gui)
+		 	chart/	- chart library
+			app/		- app main
+			ind/		- gui indicator
+			base/		- base library for tact
+

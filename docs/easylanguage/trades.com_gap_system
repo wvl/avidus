@@ -1,0 +1,15 @@
+#http://www.traders.com/documentation/FEEDbk_docs/Archive/012000/Letters/Letters.html
+inputs: Gap_Up(1), Gap_Down(1);
+variables: gap(0);
+
+gap = 100 * (open - close[1])/close[1];
+
+if gap >= gap_up then begin
+if close <= open then plot1(high, "UpGap", blue) 
+else plot1(high, "UpGap", red);
+end;
+
+if gap <= -gap_down then begin
+if close >= open then plot2(low, "dngap", blue)
+else plot2(low, "DnGap", red);
+end;

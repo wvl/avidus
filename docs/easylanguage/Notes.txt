@@ -1,0 +1,47 @@
+
+What is required for a trade system scripting language system:
+
+- declaration of variables for optimization purposes.
+
+Inputs: - describe what should be passed in to the trade system.
+  e.g. 
+       inputs: emalength, ema(emalength)
+
+       EL: Inputs: Delay(numeric) -> input from the system
+
+Commands:
+  Buy
+  Sell
+  ExitShort
+  ExitLong
+
+  showme
+	- visually indicate the bar in some manner
+
+  paintme(color)
+	- paint the bar a given color...
+	
+  TradesToday
+
+Variables:
+  EntryPrice
+  MarketPosition - -1 for short, 1 for long
+  BarsSinceEntry
+  Sess1StartTime	
+  TradesToday
+  
+--------------------------------------------------------
+
+Buy possibilities:
+- Buy at open
+- Buy at close
+- Buy at opening price + .6*val stop
+- Buy at Highest(High, 20) + 1 point stop
+- Buy at NextOpen + Breakout*Average(TrueRange, 3) stop
+- Buy 1 Shares This Bar on Close
+
+
+
+
+Easy Language Code:
+http://home.iae.nl/users/guus/omega/sourcecode/ELindex.html

@@ -1,0 +1,7 @@
+ma = sma(close,30)
+Series('ma', ma)
+
+---
+
+if crossesOver(ma, close):
+	showme()

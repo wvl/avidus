@@ -1,0 +1,55 @@
+
+misc:
+-----
+- specify a file name for showme/ts 
+- reorganize menus - seperate showme/ts/paintbars from indicators
+- chart labelling (e.g. ticker, MACD, legend...)
+- grid on/off by individual chart 
+- should be able to remove indicators, and indicator charts
+- break up edit properties into:
+	- edit chart properties
+	- edit indicators - only edits the indicators on that chart...
+- Color style combos should bring up color editor, not stylecombo
+- Integrate with an HTML viewer - for displaying results.
+        - Use khtmlw when kde 2.0 bindings are created
+
+Scale:
+------
+- Scale should be set to high/low value plus/minus a certain number of pixels
+- Log Scale on X and Y Axis - look at qt link to charting code, if I can
+- Scale on Volume seems to be too high
+
+
+portfolio:
+----------
+- should be able to open a group of stocks, and then cycle through them
+with forward and back arrows.
+- Cycle between groups of stocks
+- store trade information - view portfolio performance - can use the
+same performance information as the performance analyzer/viewer -
+eg. capital appreciation, number of winning trades, etc.
+
+
+saving of state:
+----------------
+should be able to save:
+ - colors, styles of charts
+ - number and type of indicator charts
+ - indicators and their properties
+ - default view (yearly, three month, etc.)
+
+default chart saved in $HOME/.tact dir and opened on startup 
+additional chart styles can be saved by the user, and opened by them
+
+
+server updating:
+----------------
+- store start and stop date for each symbol
+- update should check the start and stop date and retrieve only missing
+symbols
+
+
+BUGS:
+-----
+- resize not done correctly (not using visibleWidth() from ScrollView
+- resize using wm drag causes display to mess up

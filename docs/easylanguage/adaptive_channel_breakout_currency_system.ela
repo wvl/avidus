@@ -1,0 +1,31 @@
+
+#
+#
+# A modified, adaptive channel breakout currency system
+# - Ruggiero, P. 222
+#
+
+Vars: CycleLen(0);
+value2 = RSCycleTrend(close, 30, 6);
+
+# Shortest cycle detectable is 6 and longest is 50.  
+# We are using 30 bars of data and six poles
+
+CycleLen = Round(RSMemCycle1.2(close,6,50,30,6,0),0);
+
+if value2 == 1 then 
+  Buy Highest(High, CycleLen) stop;
+if value2 == 1 then 
+  Sell at Lowest(Low, CycleLen) stop;
+
+if MarketPosition == -1 and BarsSinceEntry < 10 then 
+  ExitShort at Highest(High, .5*CycleLen) stop;
+
+if MarketPosition == 1 and BarsSinceEntry < 10 then 
+  ExitLong at Lowest(Low, .5*CycleLen) stop;
+
+ExitShort at Highest(High, CycleLen) stop;
+ExitLong at Lowest(Low, CycleLen) stop;
+
+
+

@@ -1,0 +1,53 @@
+
+Indicator design requirements:
+- use indicators completely separate from gui
+- use bars back notation ([0] - today, [1] yesterday, etc.)
+- parameterizable
+
+
+signal = close.ema(10)
+signal = ema(close, 10)
+
+def ema(length, signal=close):
+    out = []
+    var = 0
+    for i in range(len(signal)):
+	if i < length
+	   var = var + close[i]
+	else
+    
+plotting:
+	
+ 
+- seperate indicators into two types:
+   built in, and user supplied?
+- supply the knowledge of plotting with the indicator
+- do everything through a plot command?
+
+
+solution:
+  - have an indicator library, non gui dependent, using bars back
+  notation.
+  - subclass indicator for the plot types
+      - edit -> builds an edit tab, to edit properties
+      - calc -> calculates the indicator (calls the library function)
+  - could use a templated class to do common gui stuff.  for example,
+  to do a paintme study, you could have code like:
+  
+	ma = ema(input,30)
+	for i in range(len(input)):
+	    if input[i] > ma[i]:
+	       paintme(i,red)
+	    else:
+	       paintme(i,blue):
+
+   where the actual class used is a subclass of a PaintMe class which
+   is a subclass of Indicator....
+
+  - other ideas:
+     ts class should create lists of signals:
+	- buy and sell lists of (date, value) pairs
+
+     ts gui class could then call the ts class and do all of the gui
+     stuff like displaying buy/sell signals on the graph, etc.
+  

@@ -1,0 +1,39 @@
+
+Installing Avidus
+-----------------
+
+Avidus depends on the following packages:
+-----------------------------------------
+Python 1.5: http://www.python.org
+Qt 2.1: http://www.trolltech.com/
+   - Debian package: libqt2, libqt2-dev
+PyQt: http://www.thekompany.com/projects/pykde/
+Numeric Python module: http://www.python.org/topics/scicomp/numpy.html
+	- Debian package: python-numeric
+mxDateTime python module: http://starship.python.net/~lemburg/mxDateTime.html
+   - Debian package: python-mxdatetime
+
+To Run:
+-------
+1. Run setup.py
+
+This setup script sets up a directory named .avidus in your home dir, and creates the necessary config files 
+
+2. Set up some Data:
+
+Right now, there is no graphical interface to the data server.  The documentation also consists of read the code - the API for the data server can be found in the module Avidus/ds/ds.py.  
+
+To get a number of symbols, the following commands should get you started:
+
+python
+from Avidus.ds import *
+addSymbol('intc')
+addSymbol('rhat')
+
+To update with new daily data:
+updateData()
+
+3. To Run:
+
+The chart gui can be executed from the install directory by running tact.py.  
+
